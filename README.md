@@ -3,7 +3,7 @@
 Sistema web para gerenciamento básico de salões de beleza, desenvolvido como **projeto acadêmico em equipe**, com foco em entrega funcional, organização modular e aplicação prática do ciclo completo de desenvolvimento de software.
 
 <p align="center">
-  <img src="static/img/landing_page/fotoSistema.png" alt="Dashboard BeautySys mobile e desktop" width="800"/>
+  <img src="static/img/readme_img.png" alt="Dashboard BeautySys mobile e desktop" width="100%"/>
 </p>
 
 
