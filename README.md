@@ -16,6 +16,10 @@ O sistema atende às necessidades básicas de organização e gestão de um sal�
 - 📊 **Relatório de Pesquisa:**  
   https://drive.google.com/file/d/1Yctp3rnnT-qfGkIlx1YaW7JjFjKTbcVW/view?usp=sharing
 
+- 🎥 **Vídeo de Demonstração da Aplicação:**  
+https://www.youtube.com/watch?v=EvM1CU4fg1Q  
+
+
 ## ⚙️ Funcionalidades
 - Landing page para acesso ao sistema e dashboard  
 - Agendamento de serviços  
