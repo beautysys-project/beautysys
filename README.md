@@ -89,4 +89,4 @@ Projeto desenvolvido de forma colaborativa, com divisão de tarefas entre os mem
 
 ---
 
-Projeto acadêmico desenvolvido para fins educacionais.
+Univesp - Projeto Integrador III - desenvolvido para fins educacionais.
