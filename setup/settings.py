@@ -35,10 +35,13 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '3.221.253.73',
-    '.render.com',
+    '*', '.onrender.com',
     '.railway.app',]
 
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
+
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 
 
 # Application definition
