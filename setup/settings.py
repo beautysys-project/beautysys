@@ -13,6 +13,7 @@ from dotenv import load_dotenv #type: ignore
 from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
+import dj_database_url
 
 load_dotenv()
 
@@ -24,18 +25,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n120uon2r)rokrj_beqn)d^4sl9-ucn6=0@%=_oktk2d@zl(58'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-n120uon2r)rokrj_beqn)d^4sl9-ucn6=0@%=_oktk2d@zl(58')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = [
     '54.163.133.149',
     'localhost',
     '127.0.0.1',
     '3.221.253.73',
-    'studycenterhub.online',
-    'www.studycenterhub.online',]
+    '.render.com',
+    '.railway.app',]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -61,6 +62,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -98,10 +100,10 @@ LOGIN_REDIRECT_URL = '/home/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600
+    )
 }
 
 
@@ -129,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -141,6 +143,9 @@ USE_TZ = True
 STATIC_URL = '/static/'  
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -149,6 +154,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-AWS_ACCESS_KEY_ID = 'COLOCAR_ID'
-AWS_SECRET_ACCESS_KEY = 'COLOCAR_KEY'
-AWS_REGION_NAME = 'sa-east-1'
+#AWS_ACCESS_KEY_ID = 'COLOCAR_ID'
+#AWS_SECRET_ACCESS_KEY = 'COLOCAR_KEY'
+#AWS_REGION_NAME = 'sa-east-1'
