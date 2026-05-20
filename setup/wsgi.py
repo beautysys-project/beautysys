@@ -1,5 +1,5 @@
 """
-WSGI config for miaudota project.
+WSGI config for beautysys project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
 
 import os
 
-from django.core.wsgi import get_wsgi_application
+from django.core.wsgi import gateway
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'miaudota.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
 
 application = get_wsgi_application()
